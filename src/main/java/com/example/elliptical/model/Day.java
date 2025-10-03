@@ -35,4 +35,7 @@ public class Day {
     public void friendlyDuration() {
         this.friendlyDuration = this.duration.toMinutes() + " minutes " + this.duration.toSecondsPart() + " seconds";
     }
+
+
+
 }

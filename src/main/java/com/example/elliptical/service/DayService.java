@@ -1,9 +1,9 @@
 package com.example.elliptical.service;
 
 import com.example.elliptical.model.Day;
+import com.example.elliptical.model.PerformanceCalculator;
 import com.example.elliptical.repository.DayRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
@@ -28,6 +28,7 @@ public class DayService {
                 .maxForce(maxForce)
                 .minForce(minForce)
                 .build();
+        today.setPerformance(PerformanceCalculator.evaluate(today));
 
         try {
             dayRepository.save(today);
@@ -41,4 +42,5 @@ public class DayService {
     public Optional<Day> getToday() {
         return dayRepository.getByDate(LocalDate.now());
     }
+
 }
