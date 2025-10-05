@@ -9,14 +9,10 @@ public class PerformanceCalculator {
         long minutes = day.getDuration().toMinutes();
         double kcalPerMinute = (double) day.getCalories() / minutes;
 
-        if (kcalPerMinute > 12) {
-            return Performance.INTENSE;
-        } else if (kcalPerMinute > 9) {
-            return Performance.HIGH;
-        } else if (kcalPerMinute > 6) {
-            return Performance.MODERATE;
-        } else {
-            return Performance.LOW;
-        }
+
+        return kcalPerMinute > 12 ? Performance.INTENSE
+                : kcalPerMinute > 9 ? Performance.HIGH
+                : kcalPerMinute > 6 ? Performance.MODERATE
+                : Performance.LOW;
     }
 }

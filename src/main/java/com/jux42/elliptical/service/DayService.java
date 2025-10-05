@@ -53,11 +53,7 @@ public class DayService {
         return modifyDay(day, month, year, d -> d.setDistance(distance));
     }
 
-    public Optional<Day> getToday() {
-        return dayRepository.getByDate(LocalDate.now());
-    }
-
-    private String modifyDay(int day, int month, int year, Consumer<Day> mutator) {
+    private String modifyDay(Integer day, Integer month, Integer year, Consumer<Day> mutator) {
         LocalDate date = LocalDate.of(year, month, day);
         return dayRepository.getByDate(date)
                 .map(d -> {
@@ -67,6 +63,10 @@ public class DayService {
                     return "successfully modified";
                 })
                 .orElse("no day found");
+    }
+
+    public Optional<Day> getToday() {
+        return dayRepository.getByDate(LocalDate.now());
     }
 
     public Optional<Day> getOneDay(Integer day, Integer month, Integer year) {

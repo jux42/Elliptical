@@ -72,29 +72,29 @@ public class DayController {
         return ResponseEntity.ok(dayService.getAllDays());
     }
 
-    @PutMapping("day/duration/{day}/{month}/{year}/{minutes}/{seconds}")
+    @PutMapping("day/duration/{day}/{month}/{year}")
     public ResponseEntity<String> modifyDay(@PathVariable Integer day,
                                             @PathVariable Integer month,
                                             @PathVariable Integer year,
-                                            @PathVariable Integer minutes,
-                                            @PathVariable Integer seconds
+                                            @RequestParam Integer minutes,
+                                            @RequestParam Integer seconds
                                             ) {
         return ResponseEntity.ok(dayService.modifyDay(day, month, year, minutes, seconds));
     }
 
-    @PutMapping("day/distance/{day}/{month}/{year}/{distance}")
+    @PutMapping("day/distance/{day}/{month}/{year}")
     public ResponseEntity<String> modifyDay(@PathVariable Integer day,
                                             @PathVariable Integer month,
                                             @PathVariable Integer year,
-                                            @PathVariable Double distance){
+                                            @RequestParam Double distance){
         return ResponseEntity.ok(dayService.modifyDay(day, month, year, distance));
     }
 
-    @PutMapping("day/calories/{day}/{month}/{year}/{calories}")
+    @PutMapping("day/calories/{day}/{month}/{year}")
     public ResponseEntity<String> modifyDay(@PathVariable Integer day,
                                             @PathVariable Integer month,
                                             @PathVariable Integer year,
-                                            @PathVariable Integer calories){
+                                            @RequestParam Integer calories){
         return ResponseEntity.ok(dayService.modifyDay(day, month, year, calories));
     }
 }
