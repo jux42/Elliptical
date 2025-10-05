@@ -1,8 +1,8 @@
-package com.example.elliptical.service;
+package com.jux42.elliptical.service;
 
-import com.example.elliptical.model.Day;
-import com.example.elliptical.model.PerformanceCalculator;
-import com.example.elliptical.repository.DayRepository;
+import com.jux42.elliptical.model.Day;
+import com.jux42.elliptical.model.PerformanceCalculator;
+import com.jux42.elliptical.repository.DayRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

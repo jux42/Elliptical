@@ -1,4 +1,4 @@
-package com.example.elliptical.model;
+package com.jux42.elliptical.model;
 
 public enum Performance {
 

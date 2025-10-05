@@ -1,7 +1,7 @@
-package com.example.elliptical.controller.apicontroller;
+package com.jux42.elliptical.controller.apicontroller;
 
-import com.example.elliptical.model.Day;
-import com.example.elliptical.service.DayService;
+import com.jux42.elliptical.model.Day;
+import com.jux42.elliptical.service.DayService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

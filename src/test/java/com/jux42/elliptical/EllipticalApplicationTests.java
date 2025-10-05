@@ -1,4 +1,4 @@
-package com.example.elliptical;
+package com.jux42.elliptical;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
