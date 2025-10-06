@@ -33,7 +33,7 @@ public class Day {
     private Performance performance;
 
     public void friendlyDuration() {
-        this.friendlyDuration = this.duration.toMinutes() + " minutes " + this.duration.toSecondsPart() + " seconds";
+        this.friendlyDuration = this.duration.toMinutes() + "' - " + this.duration.toSecondsPart() + "'' ";
     }
 
 

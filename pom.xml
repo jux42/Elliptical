@@ -8,7 +8,7 @@
         <version>3.5.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
+    <groupId>com.jux42</groupId>
     <artifactId>Elliptical</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Elliptical</name>
@@ -55,6 +55,16 @@
             <optional>true</optional>
         </dependency>
         <dependency>
+            <groupId>gg.jte</groupId>
+            <artifactId>jte-spring-boot-starter-3</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>gg.jte</groupId>
+            <artifactId>jte</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
@@ -79,6 +89,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <mainClass>com.jux42.elliptical.EllipticalApplication</mainClass>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
