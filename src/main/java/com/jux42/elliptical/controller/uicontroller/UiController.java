@@ -27,13 +27,12 @@ public class UiController {
 
     private final DayService dayService;
 
-    @GetMapping ("days")
-    public String listDays(Model model) {
-        var days = dayService.getAllDays().stream()
-                .map(DayViewMapper::toView)
-                .toList();
+    @GetMapping ("/days/all")
+    public String listDays(@RequestParam(required = false) Integer created, Model model) {
+        var days = dayService.getAllDays().stream().map(DayViewMapper::toView).toList();
         model.addAttribute("days", days);
-        return "/pages/days";
+        if (created != null) model.addAttribute("message", "Day created");
+        return "pages/days";
     }
 
     @GetMapping("/days/detail")
@@ -46,12 +45,12 @@ public class UiController {
                 .orElse("pages/not-found");
     }
 
-    @GetMapping("days/search")
+    @GetMapping("/days/search")
     public String searchDayForm() {
         return "pages/day-search";
     }
 
-    @GetMapping("/pages/settings")
+    @GetMapping("/settings")
     public String settings() {
         return "pages/settings";
     }
