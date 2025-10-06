@@ -22,7 +22,7 @@ public class DayService {
 
         if (dayRepository.getByDate(date).isPresent()) return "day already created";
 
-        Day today = Day.builder()
+        Day day = Day.builder()
                 .date(date)
                 .duration(Duration.ofMinutes(minutes).plusSeconds(seconds))
                 .distance(distance)
@@ -30,10 +30,10 @@ public class DayService {
                 .maxForce(maxForce)
                 .minForce(minForce)
                 .build();
-        today.setPerformance(PerformanceCalculator.evaluate(today));
-
+        day.setPerformance(PerformanceCalculator.evaluate(day));
+        day.friendlyDuration();
         try {
-            dayRepository.save(today);
+            dayRepository.save(day);
             return "success";
         }catch (Exception e){
             return e.getMessage();

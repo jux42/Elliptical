@@ -3,7 +3,7 @@
 
 @template.layouts.base(
 title  = "Elliptical - Days",
-active = "home",
+active = "all",
 content = @`
     <h1>Days</h1>
     @if (days.isEmpty())
